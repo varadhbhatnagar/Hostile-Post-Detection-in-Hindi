@@ -24,7 +24,7 @@ def extract_emoticons(s):
 
 def extract_reserved_words(s):
 
-    reserved_words = re.findall(r'^(RT|FAV)', s)
+    reserved_words = re.findall(r'^(RT|FAV|&amp)', s)
 
     for i in reserved_words:
         n=s.replace(i,'')
