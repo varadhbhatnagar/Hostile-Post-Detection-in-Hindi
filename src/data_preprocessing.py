@@ -84,6 +84,7 @@ def process_tweets(df):
 
     processed_df = pd.DataFrame()
     processed_df['Post'] = df['Post']
+    processed_df['Labels Set'] = df['Labels Set']
 
     df = df.apply(lambda x: extract_emails(x['Post']), axis=1)
     processed_df['emails'] = df['emails']
