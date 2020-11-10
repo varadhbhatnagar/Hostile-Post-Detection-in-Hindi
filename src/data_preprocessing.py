@@ -79,6 +79,14 @@ def extract_urls(s):
 
     return pd.Series({'Post': s, 'urls': urls})
 
+def remove_stopwords(s):
+    hindi_stopwords = pd.read_csv('hindi_stopwords.csv', header=None)[0].tolist()
+    
+    resultwords  = [word for word in s.split() if word not in hindi_stopwords]
+    s = ' '.join(resultwords)
+
+    return pd.Series({'Post': s})
+
 
 def process_tweets(df):
 
@@ -86,27 +94,28 @@ def process_tweets(df):
     processed_df['Post'] = df['Post']
     processed_df['Labels Set'] = df['Labels Set']
 
-    df = df.apply(lambda x: extract_emails(x['Post']), axis=1)
-    processed_df['emails'] = df['emails']
+    # df = df.apply(lambda x: extract_emails(x['Post']), axis=1)
+    # processed_df['emails'] = df['emails']
 
-    df = df.apply(lambda x: extract_urls(x['Post']), axis=1)
-    processed_df['urls'] = df['urls']
+    # df = df.apply(lambda x: extract_urls(x['Post']), axis=1)
+    # processed_df['urls'] = df['urls']
 
-    df = df.apply(lambda x: extract_mentions(x['Post']), axis=1)
-    processed_df['mentions'] = df['mentions']
+    # df = df.apply(lambda x: extract_mentions(x['Post']), axis=1)
+    # processed_df['mentions'] = df['mentions']
 
-    df = df.apply(lambda x: extract_hashtags(x['Post']), axis=1)
-    processed_df['hashtags'] = df['hashtags']
+    # df = df.apply(lambda x: extract_hashtags(x['Post']), axis=1)
+    # processed_df['hashtags'] = df['hashtags']
 
-    df = df.apply(lambda x: extract_emojis(x['Post']), axis=1)
-    processed_df['emojis'] = df['emojis']
+    # df = df.apply(lambda x: extract_emojis(x['Post']), axis=1)
+    # processed_df['emojis'] = df['emojis']
 
-    df = df.apply(lambda x: extract_emoticons(x['Post']), axis=1)
-    processed_df['emoticons'] = df['emoticons']
+    # df = df.apply(lambda x: extract_emoticons(x['Post']), axis=1)
+    # processed_df['emoticons'] = df['emoticons']
 
-    df = df.apply(lambda x: extract_reserved_words(x['Post']), axis=1)
-    processed_df['reserved_words'] = df['reserved_words']
+    # df = df.apply(lambda x: extract_reserved_words(x['Post']), axis=1)
+    # processed_df['reserved_words'] = df['reserved_words']
 
+    df = df.apply(lambda x: remove_stopwords(x['Post']), axis=1)
     processed_df['Filtered_Post'] = df['Post']
 
     return processed_df
@@ -122,7 +131,7 @@ print("Val Data Shape = {}".format(val_data.shape))
 
 
 processed_train_data = process_tweets(train_data)
-processed_train_data.to_csv('../data/processed/train.csv')
+processed_train_data.to_csv('train.csv')
 
 processed_val_data = process_tweets(val_data)
-processed_val_data.to_csv('../data/processed/val.csv')
+processed_val_data.to_csv('val.csv')
