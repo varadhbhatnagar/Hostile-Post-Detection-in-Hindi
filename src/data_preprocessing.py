@@ -92,46 +92,55 @@ def process_tweets(df):
 
     processed_df = pd.DataFrame()
     processed_df['Post'] = df['Post']
-    processed_df['Labels Set'] = df['Labels Set']
+    try:
+        processed_df['Labels Set'] = df['Labels Set']
+    except:
+        pass
 
-    # df = df.apply(lambda x: extract_emails(x['Post']), axis=1)
-    # processed_df['emails'] = df['emails']
+    df = df.apply(lambda x: extract_emails(x['Post']), axis=1)
+    processed_df['emails'] = df['emails']
 
-    # df = df.apply(lambda x: extract_urls(x['Post']), axis=1)
-    # processed_df['urls'] = df['urls']
+    df = df.apply(lambda x: extract_urls(x['Post']), axis=1)
+    processed_df['urls'] = df['urls']
 
-    # df = df.apply(lambda x: extract_mentions(x['Post']), axis=1)
-    # processed_df['mentions'] = df['mentions']
+    df = df.apply(lambda x: extract_mentions(x['Post']), axis=1)
+    processed_df['mentions'] = df['mentions']
 
-    # df = df.apply(lambda x: extract_hashtags(x['Post']), axis=1)
-    # processed_df['hashtags'] = df['hashtags']
+    df = df.apply(lambda x: extract_hashtags(x['Post']), axis=1)
+    processed_df['hashtags'] = df['hashtags']
 
-    # df = df.apply(lambda x: extract_emojis(x['Post']), axis=1)
-    # processed_df['emojis'] = df['emojis']
+    df = df.apply(lambda x: extract_emojis(x['Post']), axis=1)
+    processed_df['emojis'] = df['emojis']
 
-    # df = df.apply(lambda x: extract_emoticons(x['Post']), axis=1)
-    # processed_df['emoticons'] = df['emoticons']
+    df = df.apply(lambda x: extract_emoticons(x['Post']), axis=1)
+    processed_df['emoticons'] = df['emoticons']
 
-    # df = df.apply(lambda x: extract_reserved_words(x['Post']), axis=1)
-    # processed_df['reserved_words'] = df['reserved_words']
+    df = df.apply(lambda x: extract_reserved_words(x['Post']), axis=1)
+    processed_df['reserved_words'] = df['reserved_words']
+    processed_df['Filtered_Post'] = df['Post']
 
     df = df.apply(lambda x: remove_stopwords(x['Post']), axis=1)
-    processed_df['Filtered_Post'] = df['Post']
+    processed_df['Filtered_Post_Stopword_Removed'] = df['Post']
 
     return processed_df
 
 train_file_path = '../data/raw/train.csv'
 val_file_path = '../data/raw/val.csv'
+test_file_path = '../data/raw/test.csv'
 
 train_data = pd.read_csv(train_file_path, header=0, index_col=0, usecols=[0,1,2])
 val_data = pd.read_csv(val_file_path, header=0, index_col=0, usecols=[0,1,2])
+test_data = pd.read_csv(test_file_path, header=0, index_col=0, usecols=[0,1])
 
 print("Train Data Shape = {}".format(train_data.shape))
 print("Val Data Shape = {}".format(val_data.shape))
-
+print("Test Data Shape = {}".format(test_data.shape))
 
 processed_train_data = process_tweets(train_data)
-processed_train_data.to_csv('train.csv')
+processed_train_data.to_csv('../data/processed/train.csv')
 
 processed_val_data = process_tweets(val_data)
-processed_val_data.to_csv('val.csv')
+processed_val_data.to_csv('../data/processed/val.csv')
+
+processed_test_data = process_tweets(test_data)
+processed_test_data.to_csv('../data/processed/test.csv')
