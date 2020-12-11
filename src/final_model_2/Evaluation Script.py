@@ -88,7 +88,7 @@ def get_scores(y_true, y_pred):
 
 
 ground_truth_path      = '/home/varad/Desktop/IITB/CS626NLP/Project/src/champion_models/Validation Ground Truth.csv'
-submission_file_path   = '/home/varad/Desktop/IITB/CS626NLP/Project/src/final_model_1/submission.csv'
+submission_file_path   = '/home/varad/Desktop/IITB/CS626NLP/Project/src/final_model_2/submission.csv'
 
 
 try:  
