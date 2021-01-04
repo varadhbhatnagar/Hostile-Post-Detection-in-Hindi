@@ -1,23 +1,23 @@
-## Hostile Post Detection in Hindi
+# Hostile Post Detection in Hindi
 
 Code for reproducing Team 'Albatross' result in the competition https://competitions.codalab.org/competitions/26654.
 
-### Best Results
+## Best Results
 In the `src/best_results/` we have stored the best results that we were getting.
 
 Go to `src/best_results/`:
 1. Run `Combining_Results_BinaryRelevance.ipynb'
 2. Run `Evaluation_Script.py'
 
-### System Architecture
+## System Architecture
  ![Layered Architecture Inference](/docs/LayeredArchitectureInference.png)
  
-### Data Preprocessing
+## Data Preprocessing
 In the `src` directory, run `data_preprocessing.py`. This script processes the raw data to extract hashtags, emojis, mentions, etc.
 
 The processed data files are available in `data/processed` directory.
 
-### Running the Models
+## Running the Models
 
 Use `train.csv`, `test.csv`, `val.csv` present in the `data/processed/` directory for all further operations.
 
@@ -33,7 +33,7 @@ In `src/best_model/` directory, run the models in the following sequence:
 6. Run `Combining_Results_BinaryRelevance.ipynb`.
 7. Run `Evaluation_Script.py`.
 
-### Team Members
+## Team Members
 1. Varad Bhatnagar
 2. Prince Kumar
 3. Sairam Moghili
