@@ -6,8 +6,8 @@ Code for reproducing Team 'Albatross' result in the competition https://competit
 In the `src/best_results/` we have stored the best results that we were getting.
 
 Go to `src/best_results/`:
-1. Run `Combining_Results_BinaryRelevance.ipynb'
-2. Run `Evaluation_Script.py'
+1. Run `Combining_Results_BinaryRelevance.ipynb`
+2. Run `Evaluation_Script.py`
 
 ## System Architecture
  ![Layered Architecture Inference](/docs/LayeredArchitectureInference.png)
