@@ -1,6 +1,8 @@
 # Hostile Post Detection in Hindi
 
-Code for reproducing Team 'Albatross' result in the competition https://competitions.codalab.org/competitions/26654.
+Code for reproducing Team 'Albatross' result in the [competition](https://competitions.codalab.org/competitions/26654).
+
+Paper- ['Divide and Conquer: An Ensemble Approach for Hostile Post Detection in Hindi'](https://arxiv.org/abs/2101.07973).
 
 ## Best Results
 In the `src/best_results/` we have stored the best results that we were getting.
