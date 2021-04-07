@@ -39,3 +39,22 @@ In `src/best_model/` directory, run the models in the following sequence:
 1. Varad Bhatnagar
 2. Prince Kumar
 3. Sairam Moghili
+
+## Cite
+
+@ARTICLE{2021arXiv210107973B,
+       author = {{Bhatnagar}, Varad and {Kumar}, Prince and {Moghili}, Sairam and {Bhattacharyya}, Pushpak},
+        title = "{Divide and Conquer: An Ensemble Approach for Hostile Post Detection in Hindi}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Computation and Language},
+         year = 2021,
+        month = jan,
+          eid = {arXiv:2101.07973},
+        pages = {arXiv:2101.07973},
+archivePrefix = {arXiv},
+       eprint = {2101.07973},
+ primaryClass = {cs.CL},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2021arXiv210107973B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
