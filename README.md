@@ -40,7 +40,7 @@ In `src/best_model/` directory, run the models in the following sequence:
 2. Prince Kumar
 3. Sairam Moghili
 
-## Cite
+## Citation
 If you find our work useful, please cite:
 ```
 @ARTICLE{2021arXiv210107973B,
