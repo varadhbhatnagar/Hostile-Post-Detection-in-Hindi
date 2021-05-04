@@ -41,7 +41,8 @@ In `src/best_model/` directory, run the models in the following sequence:
 3. Sairam Moghili
 
 ## Cite
-
+If you find our work useful, please cite:
+```
 @ARTICLE{2021arXiv210107973B,
        author = {{Bhatnagar}, Varad and {Kumar}, Prince and {Moghili}, Sairam and {Bhattacharyya}, Pushpak},
         title = "{Divide and Conquer: An Ensemble Approach for Hostile Post Detection in Hindi}",
@@ -57,4 +58,4 @@ archivePrefix = {arXiv},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2021arXiv210107973B},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
-
+```
