@@ -4,6 +4,10 @@ Code for reproducing Team 'Albatross' result in the [competition](https://compet
 
 Paper- ['Divide and Conquer: An Ensemble Approach for Hostile Post Detection in Hindi'](https://arxiv.org/abs/2101.07973).
 
+## Data
+
+Shift all files from `Dataset` directory in the [official data repository](https://github.com/mohit19014/Hindi-Hostility-Detection-CONSTRAINT-2021) to `data/raw/` directory in this repo and run the Data Preprocessing steps.
+
 ## Best Results
 In the `src/best_results/` we have stored the best results that we were getting.
 
